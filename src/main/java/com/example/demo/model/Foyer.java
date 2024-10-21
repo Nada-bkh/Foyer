@@ -1,9 +1,6 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,4 +18,7 @@ public class Foyer {
     private String nomFoyer;
     private long capaciteFoyer;
 
+    @OneToOne
+    @JoinColumn(name = "universite_id")
+    private Universite universite;
 }
